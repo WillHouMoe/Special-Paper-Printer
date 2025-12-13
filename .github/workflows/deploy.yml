@@ -2,7 +2,7 @@ name: Deploy Static Site
 on:
   push:
     branches:
-      - main  # 监听 main 分支的变动
+      - master  # 监听 main 分支的变动
 
 permissions:
   contents: write # 允许 Action 写入分支
