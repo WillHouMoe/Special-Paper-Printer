@@ -1,0 +1,43 @@
+/* 自定义工具类，配合 HTML 中的 btn-tool 类名使用 */
+.btn-tool {
+    @apply px-4 py-2 bg-white hover:bg-gray-100 text-gray-700 rounded-md text-sm flex items-center gap-2 transition-all border border-gray-200 shadow-sm;
+}
+
+/* 编辑器画布容器：必须为 block 且支持滚动 */
+#canvas-wrapper-div {
+    display: block;
+    overflow: auto;
+}
+
+/* Fabric.js 容器外部包裹层 */
+.canvas-container {
+    margin: 0 auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform-origin: 0 0; /* 关键：从左上角缩放 */
+}
+
+/* --- 裁剪视图相关样式 --- */
+
+/* 1. 裁剪滚动的父容器 */
+#crop-scroll-container {
+    display: block;
+    overflow: auto;
+    background-color: #2b2b2b;
+    position: relative;
+}
+
+/* 2. 缩放包装器：包裹 Cropper 生成的元素 */
+#crop-scale-wrapper {
+    display: inline-block;
+    transform-origin: 0 0;
+    vertical-align: top;
+}
+
+/* 3. 覆盖 Cropper 默认样式以配合我们的外部缩放 */
+.cropper-container {
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    direction: ltr;
+    touch-action: none;
+}
